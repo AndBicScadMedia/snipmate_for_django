@@ -7,7 +7,6 @@
 
 # Note: Optional arguments that are booleans will use the opposite since you
 # can either not specify them, or override them, e.g. auto_now_add=False.
-
 snippet auto
 	${1:FIELDNAME} = models.AutoField()
 snippet bool
@@ -62,8 +61,65 @@ snippet m2m
 snippet o2o
 	${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}${3:, parent_link=True}${4:, related_name=''}${5:, limit_choices_to=}${6:, to_field=''})
 
-# Code Skeletons
+# form fields
+snippet formbool
+	${1:FIELDNAME} = forms.BooleanField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=False}${6:, help_text=''})
+snippet formchar
+	${1:FIELDNAME} = forms.CharField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formchoice
+	${1:FIELDNAME} = forms.ChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formtypedchoice
+	${1:FIELDNAME} = forms.TypedChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, empty_value=''}${6:, initial=''}${7:, help_text=''})
+snippet formdate
+	${1:FIELDNAME} = forms.DateField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet fromdatetime
+	${1:FIELDNAME} = forms.DateTimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formdecimal
+	${1:FIELDNAME} = forms.DecimalField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formemail
+	${1:FIELDNAME} = forms.EmailField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formfile
+	${1:FIELDNAME} = forms.FileField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formfilepath
+	${1:FIELDNAME} = forms.FilePathField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formfloat
+	${1:FIELDNAME} = forms.FloatField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formimage
+	${1:FIELDNAME} = forms.ImageField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formint
+	${1:FIELDNAME} = forms.IntegerField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formip
+	${1:FIELDNAME} = forms.IPAddressField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formgenericip
+	${1:FIELDNAME} = forms.GenericIPAddressField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formmultchoice
+	${1:FIELDNAME} = forms.MultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=[]}${6:, help_text=''})
+snippet formtypedmultchoice
+	${1:FIELDNAME} = forms.TypedMultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, empty_value=''}${6:, initial=''}${7:, help_text=''})
+snippet formnullbool
+	${1:FIELDNAME} = forms.NullBooleanField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formregex
+	${1:FIELDNAME} = forms.RegexField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formslug
+	${1:FIELDNAME} = forms.SlugField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formtime
+	${1:FIELDNAME} = forms.TimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formurl
+	${1:FIELDNAME} = forms.URLField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+# Built in fields
+snippet formcombo
+	${1:FIELDNAME} = forms.ComboField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formmultival
+	${1:FIELDNAME} = forms.MultiValueField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
+snippet formsplitdatetime
+	${1:FIELDNAME} = forms.SplitDateTimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formmodelchoice
+	${1:FIELDNAME} = forms.ModelChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
+snippet formmodelmultchoice
+	${1:FIELDNAME} = forms.ModelMultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=[]}${6:, help_text=''})
 
+
+# Code Skeletons
 snippet form
 	class ${1:FormName}(forms.Form):
 		"""${2:docstring}"""
@@ -73,16 +129,16 @@ snippet model
 	class ${1:ModelName}(models.Model):
 		"""${2:docstring}"""
 		${3}
-		
+
 		class Meta:
 			${4}
-		
+
 		def __unicode__(self):
 			${5}
-		
+
 		def save(self, force_insert=False, force_update=False):
 			${6}
-		
+
 		@models.permalink
 		def get_absolute_url(self):
 			return ('${7:view_or_url_name}' ${8})
@@ -90,9 +146,9 @@ snippet model
 snippet modeladmin
 	class ${1:ModelName}Admin(admin.ModelAdmin):
 		${2}
-	
+
 	admin.site.register($1, $1Admin)
-	
+
 snippet r2r
 	return render_to_response('${1:template.html}', {
 			${2}
@@ -108,4 +164,3 @@ snippet stackedinline
 	class ${1:ModelName}Inline(admin.StackedInline):
 		model = $1
 		extra = ${2:3}
-
