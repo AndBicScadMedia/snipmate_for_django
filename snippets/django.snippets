@@ -62,69 +62,76 @@ snippet o2o
 	${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}${3:, parent_link=True}${4:, related_name=''}${5:, limit_choices_to=}${6:, to_field=''})
 
 # form fields
-snippet formbool
+snippet fbool
 	${1:FIELDNAME} = forms.BooleanField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=False}${6:, help_text=''})
-snippet formchar
+snippet fchar
 	${1:FIELDNAME} = forms.CharField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formchoice
+snippet fchoice
 	${1:FIELDNAME} = forms.ChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formtypedchoice
+snippet ftypedchoice
 	${1:FIELDNAME} = forms.TypedChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, empty_value=''}${6:, initial=''}${7:, help_text=''})
-snippet formdate
+snippet fdate
 	${1:FIELDNAME} = forms.DateField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet fromdatetime
+snippet fdatetime
 	${1:FIELDNAME} = forms.DateTimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formdecimal
+snippet fdecimal
 	${1:FIELDNAME} = forms.DecimalField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formemail
+snippet femail
 	${1:FIELDNAME} = forms.EmailField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formfile
+snippet ffile
 	${1:FIELDNAME} = forms.FileField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formfilepath
+snippet ffilepath
 	${1:FIELDNAME} = forms.FilePathField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formfloat
+snippet ffloat
 	${1:FIELDNAME} = forms.FloatField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formimage
+snippet fimage
 	${1:FIELDNAME} = forms.ImageField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formint
+snippet fint
 	${1:FIELDNAME} = forms.IntegerField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formip
+snippet fip
 	${1:FIELDNAME} = forms.IPAddressField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formgenericip
+snippet fgenericip
 	${1:FIELDNAME} = forms.GenericIPAddressField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formmultchoice
+snippet fmultchoice
 	${1:FIELDNAME} = forms.MultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=[]}${6:, help_text=''})
-snippet formtypedmultchoice
+snippet ftypedmultchoice
 	${1:FIELDNAME} = forms.TypedMultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, empty_value=''}${6:, initial=''}${7:, help_text=''})
-snippet formnullbool
+snippet fnullbool
 	${1:FIELDNAME} = forms.NullBooleanField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formregex
+snippet fregex
 	${1:FIELDNAME} = forms.RegexField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formslug
+snippet fslug
 	${1:FIELDNAME} = forms.SlugField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formtime
+snippet ftime
 	${1:FIELDNAME} = forms.TimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formurl
+snippet furl
 	${1:FIELDNAME} = forms.URLField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
 # Built in fields
-snippet formcombo
+snippet fcombo
 	${1:FIELDNAME} = forms.ComboField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formmultival
+snippet fmultival
 	${1:FIELDNAME} = forms.MultiValueField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=''}${6:, help_text=''})
-snippet formsplitdatetime
+snippet fsplitdatetime
 	${1:FIELDNAME} = forms.SplitDateTimeField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formmodelchoice
+snippet fmodelchoice
 	${1:FIELDNAME} = forms.ModelChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=None}${6:, help_text=''})
-snippet formmodelmultchoice
+snippet fmodelmultchoice
 	${1:FIELDNAME} = forms.ModelMultipleChoiceField(${2:required=True}${3:, label=''}${4:, label=''}${5:, initial=[]}${6:, help_text=''})
 
 
-# Code Skeletons
+# Form
 snippet form
 	class ${1:FormName}(forms.Form):
 		"""${2:docstring}"""
 		${3}
 
+		def clean(self);
+			${4}
+
+		def save(self):
+			${5}
+
+#models
 snippet model
 	class ${1:ModelName}(models.Model):
 		"""${2:docstring}"""
@@ -143,17 +150,13 @@ snippet model
 		def get_absolute_url(self):
 			return ('${7:view_or_url_name}' ${8})
 
+# admin
 snippet modeladmin
 	class ${1:ModelName}Admin(admin.ModelAdmin):
 		${2}
 
 	admin.site.register($1, $1Admin)
 
-snippet r2r
-	return render_to_response('${1:template.html}', {
-			${2}
-		}${3:, context_instance=RequestContext(request)}
-	)
 
 snippet tabularinline
 	class ${1:ModelName}Inline(admin.TabularInline):
@@ -164,3 +167,27 @@ snippet stackedinline
 	class ${1:ModelName}Inline(admin.StackedInline):
 		model = $1
 		extra = ${2:3}
+
+# views
+snippet r2r
+	return render_to_response('${1:template.html}', {
+			${2}
+		}${3:, context_instance=RequestContext(request)}
+	)
+
+snippet cview
+	class ${1:ViewName}View(${2:View}):
+		"""${3:docstring}"""
+		def get(self, request, *args, **kwargs):
+			${4}
+
+		def post(self, request, *args, **kwargs):
+			${5}
+
+# import shortcut
+snippet settings
+	from django.conf import settings
+
+
+
+
